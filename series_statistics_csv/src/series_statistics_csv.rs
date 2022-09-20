@@ -12,7 +12,7 @@ pub trait SeriesStatisticsCsv {
         un_upper_name: String,
         un_lower_name: String,
     );
-    fn read(&mut self, file_path: String) -> HashMap<String, Vec<f64>>;
+    fn read(file_path: String) -> HashMap<String, Vec<f64>>;
 }
 
 impl SeriesStatisticsCsv for series_statistics::SeriesStatistics {
@@ -55,7 +55,7 @@ impl SeriesStatisticsCsv for series_statistics::SeriesStatistics {
         writer.flush().expect("Failed flush");
     }
 
-    fn read(&mut self, file_path: String) -> HashMap<String, Vec<f64>> {
+    fn read(file_path: String) -> HashMap<String, Vec<f64>> {
         let mut table: HashMap<String, Vec<f64>> = HashMap::new();
         let mut reader = csv::ReaderBuilder::new()
             .has_headers(true)

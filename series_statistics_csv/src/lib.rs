@@ -28,9 +28,7 @@ mod tests {
 
     #[test]
     fn test_read() {
-        let length: usize = 5;
-        let mut series = series_statistics::SeriesStatistics::new(length);
-        let hash_map = series.read("./sample.csv".to_string());
+        let hash_map = series_statistics::SeriesStatistics::read("./sample/sample.csv".to_string());
         println!("time: {:?}", hash_map["time"]);
         println!("mean: {:?}", hash_map["mean"]);
         println!("std.dev.: {:?}", hash_map["std.dev."]);
