@@ -1,3 +1,4 @@
 /series_statistics_csv/target
 /series_statistics_csv/Cargo.lock
+/series_statistics_csv/sample.csv
 .DS_Store
