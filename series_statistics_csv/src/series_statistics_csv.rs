@@ -26,7 +26,7 @@ impl SeriesStatisticsCsv for series_statistics::SeriesStatistics {
         un_upper_name: String,
         un_lower_name: String,
     ) {
-        if self.count() != x.len() {
+        if self.len() != x.len() {
             return;
         }
         let mut writer = csv::Writer::from_path(file_path).expect("Invaild file path.");
