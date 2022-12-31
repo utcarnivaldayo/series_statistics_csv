@@ -40,7 +40,7 @@ impl SeriesStatisticsCsv for series_statistics::SeriesStatistics {
                 un_lower_name.to_string(),
             ])
             .expect("Write Error");
-        for i in 0..self.count() {
+        for i in 0..self.len() {
             writer
                 .write_record(&[
                     i.to_string(),
